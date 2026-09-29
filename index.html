@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LM's Boutique | Shop Online</title>title>
+  <title>LM's Boutique | Shop Online</title>
 
   <style>
     * {
@@ -20,88 +21,101 @@
     }
 
     header {
-      background: #ffffff;
-      padding: 18px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+      background: #8b4a62;
+      color: white;
+      padding: 18px 20px;
+      text-align: center;
     }
 
-    .logo {
-      font-size: 26px;
-      font-weight: bold;
-      color: #8b4b62;
+    header h1 {
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin-top: 6px;
+      font-size: 14px;
+    }
+
+    nav {
+      background: white;
+      padding: 12px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     nav a {
+      color: #8b4a62;
       text-decoration: none;
-      color: #333;
-      margin-left: 20px;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: #8b4b62;
+      margin: 0 10px;
+      font-weight: bold;
+      font-size: 14px;
     }
 
     .hero {
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #f8e5e9, #fffaf7);
+      padding: 55px 20px;
+      background: linear-gradient(135deg, #f8e4ea, #fffaf7);
     }
 
-    .hero-content {
-      max-width: 750px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      color: #6f354b;
-      margin-bottom: 20px;
+    .hero h2 {
+      font-size: 38px;
+      color: #8b4a62;
+      margin-bottom: 15px;
     }
 
     .hero p {
-      font-size: 19px;
-      margin-bottom: 30px;
-      color: #555;
+      font-size: 17px;
+      margin-bottom: 25px;
     }
 
     .button {
       display: inline-block;
-      background: #8b4b62;
+      background: #8b4a62;
       color: white;
-      padding: 14px 28px;
-      border-radius: 30px;
+      padding: 13px 25px;
+      border-radius: 25px;
       text-decoration: none;
       font-weight: bold;
-      transition: 0.3s;
     }
 
-    .button:hover {
-      background: #6f354b;
-      transform: translateY(-2px);
-    }
-
-    section {
-      padding: 60px 5%;
-    }
-
-    .section-title {
+    .section {
+      padding: 40px 20px;
       text-align: center;
-      font-size: 32px;
-      color: #6f354b;
-      margin-bottom: 35px;
+    }
+
+    .section h2 {
+      color: #8b4a62;
+      margin-bottom: 25px;
+      font-size: 28px;
     }
 
     .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .category {
+      background: white;
+      padding: 25px 15px;
+      border-radius: 15px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .category .icon {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .category h3 {
+      color: #8b4a62;
+      margin-bottom: 8px;
+    }
+
+    .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
@@ -109,123 +123,101 @@
       margin: auto;
     }
 
-    .category {
-      background: white;
-      padding: 30px 20px;
-      text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-      font-size: 18px;
-      font-weight: bold;
-    }
-
-    .category span {
-      display: block;
-      font-size: 40px;
-      margin-bottom: 12px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
     .product {
       background: white;
       border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: 0.3s;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
+      padding: 20px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
     }
 
     .product-image {
-      height: 220px;
-      background: #f1dfe4;
+      background: #f3dce3;
+      height: 160px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 65px;
-    }
-
-    .product-info {
-      padding: 20px;
-    }
-
-    .product-info h3 {
-      color: #6f354b;
-      margin-bottom: 10px;
-    }
-
-    .price {
-      font-size: 20px;
-      font-weight: bold;
+      font-size: 55px;
       margin-bottom: 15px;
     }
 
-    .small-button {
-      display: inline-block;
-      background: #8b4b62;
-      color: white;
-      padding: 10px 18px;
-      border-radius: 20px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
+    .product h3 {
+      color: #8b4a62;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-weight: bold;
+      margin-bottom: 12px;
     }
 
     .about {
-      background: #f8e5e9;
-      text-align: center;
-    }
-
-    .about p {
-      max-width: 750px;
+      max-width: 800px;
       margin: auto;
       line-height: 1.7;
-      font-size: 17px;
     }
 
     .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      margin: 10px 0;
-      font-size: 17px;
+      background: #f8e4ea;
     }
 
     footer {
-      background: #6f354b;
+      background: #8b4a62;
       color: white;
       text-align: center;
-      padding: 25px;
+      padding: 25px 15px;
+      font-size: 14px;
     }
 
-    @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        gap: 12px;
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 30px;
       }
 
       nav a {
-        margin: 0 7px;
-        font-size: 14px;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .hero p {
-        font-size: 16px;
+        display: inline-block;
+        margin: 5px;
       }
     }
   </style>
-</he
+</head>
+
+<body>
+
+  <header>
+    <h1>LM's Boutique</h1>
+    <p>Style • Beauty • Confidence</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#shop">Shop</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>Welcome to LM's Boutique</h2>
+    <p>Discover beautiful products at affordable prices.</p>
+    <a href="#shop" class="button">Shop Now</a>
+  </section>
+
+  <section class="section" id="categories">
+    <h2>Shop By Category</h2>
+
+    <div class="categories">
+
+      <div class="category">
+        <div class="icon">👗</div>
+        <h3>Fashion</h3>
+        <p>Trendy fashion finds</p>
+      </div>
+
+      <div class="category">
+        <div class="icon">💄</div>
+        <h3>Beauty</h3>
+        <p>Beauty & personal care</p>
+      </div>
+
+      <div
